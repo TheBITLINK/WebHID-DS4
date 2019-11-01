@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>DualShock4Touchpad | webhid-ds4</title>
+	<title>DualShock4State | webhid-ds4</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -54,10 +54,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="dualshock4touchpad.html">DualShock4Touchpad</a>
+					<a href="dualshock4state.html">DualShock4State</a>
 				</li>
 			</ul>
-			<h1>Interface DualShock4Touchpad</h1>
+			<h1>Interface DualShock4State</h1>
 		</div>
 	</div>
 </header>
@@ -67,15 +67,16 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Touchpad State</p>
+						<p>Controller State</p>
 					</div>
+					<p>Stores information about the current controller state, and its components.</p>
 				</div>
 			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">DualShock4Touchpad</span>
+						<span class="target">DualShock4State</span>
 					</li>
 				</ul>
 			</section>
@@ -86,7 +87,13 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="dualshock4touchpad.html#touches" class="tsd-kind-icon">touches</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="dualshock4state.html#axes" class="tsd-kind-icon">axes</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="dualshock4state.html#battery" class="tsd-kind-icon">battery</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="dualshock4state.html#buttons" class="tsd-kind-icon">buttons</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="dualshock4state.html#charging" class="tsd-kind-icon">charging</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="dualshock4state.html#interface" class="tsd-kind-icon">interface</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="dualshock4state.html#timestamp" class="tsd-kind-icon">timestamp</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="dualshock4state.html#touchpad" class="tsd-kind-icon">touchpad</a></li>
 							</ul>
 						</section>
 					</div>
@@ -95,17 +102,107 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="touches" class="tsd-anchor"></a>
-					<h3>touches</h3>
-					<div class="tsd-signature tsd-kind-icon">touches<span class="tsd-signature-symbol">:</span> <a href="dualshock4touchpadtouch.html" class="tsd-signature-type">DualShock4TouchpadTouch</a><span class="tsd-signature-symbol">[]</span></div>
+					<a name="axes" class="tsd-anchor"></a>
+					<h3>axes</h3>
+					<div class="tsd-signature tsd-kind-icon">axes<span class="tsd-signature-symbol">:</span> <a href="dualshock4analogstate.html" class="tsd-signature-type">DualShock4AnalogState</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in state.ts:120</li>
+							<li>Defined in <a href="https://github.com/TheBITLINK/WebHID-DS4/blob/7b9e1c8/src/state.ts#L16">state.ts:16</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Current touches</p>
+							<p>Analog positions</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="battery" class="tsd-anchor"></a>
+					<h3>battery</h3>
+					<div class="tsd-signature tsd-kind-icon">battery<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/TheBITLINK/WebHID-DS4/blob/7b9e1c8/src/state.ts#L11">state.ts:11</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Battery Level (0-100)</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="buttons" class="tsd-anchor"></a>
+					<h3>buttons</h3>
+					<div class="tsd-signature tsd-kind-icon">buttons<span class="tsd-signature-symbol">:</span> <a href="dualshock4buttonstate.html" class="tsd-signature-type">DualShock4ButtonState</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/TheBITLINK/WebHID-DS4/blob/7b9e1c8/src/state.ts#L18">state.ts:18</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Buttons pressed</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="charging" class="tsd-anchor"></a>
+					<h3>charging</h3>
+					<div class="tsd-signature tsd-kind-icon">charging<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/TheBITLINK/WebHID-DS4/blob/7b9e1c8/src/state.ts#L13">state.ts:13</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Is the battery being charged?</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="interface" class="tsd-anchor"></a>
+					<h3>interface</h3>
+					<div class="tsd-signature tsd-kind-icon">interface<span class="tsd-signature-symbol">:</span> <a href="../enums/dualshock4interface.html" class="tsd-signature-type">DualShock4Interface</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/TheBITLINK/WebHID-DS4/blob/7b9e1c8/src/state.ts#L8">state.ts:8</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Interface used for communication (USB/Bluetooth)</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="timestamp" class="tsd-anchor"></a>
+					<h3>timestamp</h3>
+					<div class="tsd-signature tsd-kind-icon">timestamp<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/TheBITLINK/WebHID-DS4/blob/7b9e1c8/src/state.ts#L23">state.ts:23</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Timestamp of the last report</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="touchpad" class="tsd-anchor"></a>
+					<h3>touchpad</h3>
+					<div class="tsd-signature tsd-kind-icon">touchpad<span class="tsd-signature-symbol">:</span> <a href="dualshock4touchpad.html" class="tsd-signature-type">DualShock4Touchpad</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/TheBITLINK/WebHID-DS4/blob/7b9e1c8/src/state.ts#L20">state.ts:20</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Touchpad</p>
 						</div>
 					</div>
 				</section>
@@ -139,21 +236,39 @@
 					<li class=" tsd-kind-interface">
 						<a href="dualshock4buttonstate.html" class="tsd-kind-icon">Dual<wbr>Shock4<wbr>Button<wbr>State</a>
 					</li>
-					<li class=" tsd-kind-interface">
-						<a href="dualshock4state.html" class="tsd-kind-icon">Dual<wbr>Shock4<wbr>State</a>
-					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface">
-						<a href="dualshock4touchpad.html" class="tsd-kind-icon">Dual<wbr>Shock4<wbr>Touchpad</a>
+						<a href="dualshock4state.html" class="tsd-kind-icon">Dual<wbr>Shock4<wbr>State</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="dualshock4touchpad.html#touches" class="tsd-kind-icon">touches</a>
+								<a href="dualshock4state.html#axes" class="tsd-kind-icon">axes</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="dualshock4state.html#battery" class="tsd-kind-icon">battery</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="dualshock4state.html#buttons" class="tsd-kind-icon">buttons</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="dualshock4state.html#charging" class="tsd-kind-icon">charging</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="dualshock4state.html#interface" class="tsd-kind-icon">interface</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="dualshock4state.html#timestamp" class="tsd-kind-icon">timestamp</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="dualshock4state.html#touchpad" class="tsd-kind-icon">touchpad</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
+					<li class=" tsd-kind-interface">
+						<a href="dualshock4touchpad.html" class="tsd-kind-icon">Dual<wbr>Shock4<wbr>Touchpad</a>
+					</li>
 					<li class=" tsd-kind-interface">
 						<a href="dualshock4touchpadtouch.html" class="tsd-kind-icon">Dual<wbr>Shock4<wbr>Touchpad<wbr>Touch</a>
 					</li>

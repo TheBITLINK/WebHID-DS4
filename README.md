@@ -54,4 +54,4 @@ document.getElementById('connectButton').addEventListener('click', async () => {
 
 ### Documentation
 
-Documentation is available [here](https://thebitlink.github.io/WebHID-DS4/docs/)
+API Documentation is available [here](https://thebitlink.github.io/WebHID-DS4/api/)

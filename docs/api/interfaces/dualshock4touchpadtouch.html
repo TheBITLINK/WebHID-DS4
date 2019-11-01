@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>DualShock4Interface | webhid-ds4</title>
+	<title>DualShock4TouchpadTouch | webhid-ds4</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -54,10 +54,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="dualshock4interface.html">DualShock4Interface</a>
+					<a href="dualshock4touchpadtouch.html">DualShock4TouchpadTouch</a>
 				</li>
 			</ul>
-			<h1>Enumeration DualShock4Interface</h1>
+			<h1>Interface DualShock4TouchpadTouch</h1>
 		</div>
 	</div>
 </header>
@@ -67,64 +67,78 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Current Interface</p>
+						<p>Touchpad Touch Information</p>
 					</div>
+					<p>The touchpad&#39;s resolution is 1920x943.</p>
 				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">DualShock4TouchpadTouch</span>
+					</li>
+				</ul>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Enumeration members</h3>
+							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="dualshock4interface.html#bluetooth" class="tsd-kind-icon">Bluetooth</a></li>
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="dualshock4interface.html#disconnected" class="tsd-kind-icon">Disconnected</a></li>
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="dualshock4interface.html#usb" class="tsd-kind-icon">USB</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="dualshock4touchpadtouch.html#touchid" class="tsd-kind-icon">touch<wbr>Id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="dualshock4touchpadtouch.html#x" class="tsd-kind-icon">x</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="dualshock4touchpadtouch.html#y" class="tsd-kind-icon">y</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Enumeration members</h2>
-				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-					<a name="bluetooth" class="tsd-anchor"></a>
-					<h3>Bluetooth</h3>
-					<div class="tsd-signature tsd-kind-icon">Bluetooth<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;&quot;bt&quot;</span></div>
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="touchid" class="tsd-anchor"></a>
+					<h3>touch<wbr>Id</h3>
+					<div class="tsd-signature tsd-kind-icon">touch<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in state.ts:145</li>
+							<li>Defined in <a href="https://github.com/TheBITLINK/WebHID-DS4/blob/7b9e1c8/src/state.ts#L130">state.ts:130</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The controller is connected over BT</p>
+							<p>Touch ID. Changes with every new touch.</p>
 						</div>
 					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-					<a name="disconnected" class="tsd-anchor"></a>
-					<h3>Disconnected</h3>
-					<div class="tsd-signature tsd-kind-icon">Disconnected<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;&quot;none&quot;</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="x" class="tsd-anchor"></a>
+					<h3>x</h3>
+					<div class="tsd-signature tsd-kind-icon">x<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in state.ts:141</li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-					<a name="usb" class="tsd-anchor"></a>
-					<h3>USB</h3>
-					<div class="tsd-signature tsd-kind-icon">USB<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;&quot;usb&quot;</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in state.ts:143</li>
+							<li>Defined in <a href="https://github.com/TheBITLINK/WebHID-DS4/blob/7b9e1c8/src/state.ts#L132">state.ts:132</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The controller is connected over USB</p>
+							<p>X Position.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="y" class="tsd-anchor"></a>
+					<h3>y</h3>
+					<div class="tsd-signature tsd-kind-icon">y<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/TheBITLINK/WebHID-DS4/blob/7b9e1c8/src/state.ts#L134">state.ts:134</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Y Position.</p>
 						</div>
 					</div>
 				</section>
@@ -140,24 +154,9 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-				</ul>
-				<ul class="current">
-					<li class="current tsd-kind-enum">
-						<a href="dualshock4interface.html" class="tsd-kind-icon">Dual<wbr>Shock4<wbr>Interface</a>
-						<ul>
-							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="dualshock4interface.html#bluetooth" class="tsd-kind-icon">Bluetooth</a>
-							</li>
-							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="dualshock4interface.html#disconnected" class="tsd-kind-icon">Disconnected</a>
-							</li>
-							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="dualshock4interface.html#usb" class="tsd-kind-icon">USB</a>
-							</li>
-						</ul>
+					<li class=" tsd-kind-enum">
+						<a href="../enums/dualshock4interface.html" class="tsd-kind-icon">Dual<wbr>Shock4<wbr>Interface</a>
 					</li>
-				</ul>
-				<ul class="after-current">
 					<li class=" tsd-kind-class">
 						<a href="../classes/dualshock4.html" class="tsd-kind-icon">Dual<wbr>Shock4</a>
 					</li>
@@ -168,20 +167,35 @@
 						<a href="../classes/dualshock4rumble.html" class="tsd-kind-icon">Dual<wbr>Shock4<wbr>Rumble</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="../interfaces/dualshock4analogstate.html" class="tsd-kind-icon">Dual<wbr>Shock4<wbr>Analog<wbr>State</a>
+						<a href="dualshock4analogstate.html" class="tsd-kind-icon">Dual<wbr>Shock4<wbr>Analog<wbr>State</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="../interfaces/dualshock4buttonstate.html" class="tsd-kind-icon">Dual<wbr>Shock4<wbr>Button<wbr>State</a>
+						<a href="dualshock4buttonstate.html" class="tsd-kind-icon">Dual<wbr>Shock4<wbr>Button<wbr>State</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="../interfaces/dualshock4state.html" class="tsd-kind-icon">Dual<wbr>Shock4<wbr>State</a>
+						<a href="dualshock4state.html" class="tsd-kind-icon">Dual<wbr>Shock4<wbr>State</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="../interfaces/dualshock4touchpad.html" class="tsd-kind-icon">Dual<wbr>Shock4<wbr>Touchpad</a>
+						<a href="dualshock4touchpad.html" class="tsd-kind-icon">Dual<wbr>Shock4<wbr>Touchpad</a>
 					</li>
-					<li class=" tsd-kind-interface">
-						<a href="../interfaces/dualshock4touchpadtouch.html" class="tsd-kind-icon">Dual<wbr>Shock4<wbr>Touchpad<wbr>Touch</a>
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface">
+						<a href="dualshock4touchpadtouch.html" class="tsd-kind-icon">Dual<wbr>Shock4<wbr>Touchpad<wbr>Touch</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="dualshock4touchpadtouch.html#touchid" class="tsd-kind-icon">touch<wbr>Id</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="dualshock4touchpadtouch.html#x" class="tsd-kind-icon">x</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="dualshock4touchpadtouch.html#y" class="tsd-kind-icon">y</a>
+							</li>
+						</ul>
 					</li>
+				</ul>
+				<ul class="after-current">
 				</ul>
 			</nav>
 		</div>

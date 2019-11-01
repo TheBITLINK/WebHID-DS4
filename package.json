@@ -10,7 +10,7 @@
   "private": false,
   "scripts": {
     "build": "rollup -c",
-    "build-docs": "parcel build demo/index.html -d docs && typedoc"
+    "build-docs": "parcel build demo/index.html -d docs --public-url ./ && typedoc"
   },
   "devDependencies": {
     "@types/crc": "^3.4.0",

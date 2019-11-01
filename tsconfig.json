@@ -62,7 +62,7 @@
   },
   "typedocOptions": {
     "src": "./src",
-    "out": "./docs/docs",
+    "out": "./docs/api",
     "ignoreCompilerErrors": true,
     "excludeExternals": true,
     "externalPattern": "**/node_modules/**/*",

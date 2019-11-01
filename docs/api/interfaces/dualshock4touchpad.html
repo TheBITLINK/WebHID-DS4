@@ -3,17 +3,17 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>webhid-ds4</title>
+	<title>DualShock4Touchpad | webhid-ds4</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="assets/css/main.css">
+	<link rel="stylesheet" href="../assets/css/main.css">
 </head>
 <body>
 <header>
 	<div class="tsd-page-toolbar">
 		<div class="container">
 			<div class="table-wrap">
-				<div class="table-cell" id="tsd-search" data-index="assets/js/search.js" data-base=".">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.js" data-base="..">
 					<div class="field">
 						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
 						<input id="tsd-search-field" type="text" />
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="index.html" class="title">webhid-ds4</a>
+					<a href="../index.html" class="title">webhid-ds4</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -51,114 +51,111 @@
 		<div class="container">
 			<ul class="tsd-breadcrumb">
 				<li>
-					<a href="globals.html">Globals</a>
+					<a href="../globals.html">Globals</a>
+				</li>
+				<li>
+					<a href="dualshock4touchpad.html">DualShock4Touchpad</a>
 				</li>
 			</ul>
-			<h1> webhid-ds4</h1>
+			<h1>Interface DualShock4Touchpad</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<div class="tsd-panel tsd-typography">
-				<a href="#webhid-ds4" id="webhid-ds4" style="color: inherit; text-decoration: none;">
-					<h1>WebHID-DS4</h1>
-				</a>
-				<p>A browser API for Sony DualShock 4 controllers built over the experimental WebHID API.</p>
-				<p>Provides high level APIs to access most of the controller&#39;s features over USB and Bluetooth.</p>
-				<a href="#supported-features" id="supported-features" style="color: inherit; text-decoration: none;">
-					<h3>Supported Features</h3>
-				</a>
-				<ul>
-					<li>USB and Bluetooth connectivity</li>
-					<li>Gyro &amp; Accelerometer data</li>
-					<li>Touchpad Input</li>
-					<li>Buttons &amp; Analogs</li>
-					<li>Lightbar RGB values</li>
-					<li>Rumble motors</li>
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Touchpad State</p>
+					</div>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">DualShock4Touchpad</span>
+					</li>
 				</ul>
-				<a href="#known-issues" id="known-issues" style="color: inherit; text-decoration: none;">
-					<h3>Known Issues</h3>
-				</a>
-				<ul>
-					<li>The WebHID API is currently only available behind a flag in Chrome 78+ (chrome://flags/#enable-experimental-web-platform-features)</li>
-					<li>Setting the lightbar colors and rumble intensity over Bluetooth is currently broken.</li>
-					<li>There&#39;s currently no way to detect if a controller has been disconnected.</li>
-					<li>There&#39;s currently no way to detect if a controller has already been connected either.</li>
-					<li>Not all DS4 Models are supported by this library. I only have a CUH-ZCT2U, so that&#39;s what i used to test. Support for third party controllers is not guaranteed.</li>
-				</ul>
-				<a href="#installation" id="installation" style="color: inherit; text-decoration: none;">
-					<h3>Installation</h3>
-				</a>
-				<p><code>npm install --save webhid-ds4</code></p>
-				<a href="#usage-example" id="usage-example" style="color: inherit; text-decoration: none;">
-					<h3>Usage Example</h3>
-				</a>
-				<pre><code class="language-js"><span class="hljs-keyword">import</span> { DualShock4 } <span class="hljs-keyword">from</span> <span class="hljs-string">'webhid-ds4'</span>
-
-<span class="hljs-comment">// The WebHID device can only be requested upon user interaction</span>
-<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'connectButton'</span>).addEventListener(<span class="hljs-string">'click'</span>, <span class="hljs-keyword">async</span> () =&gt; {
-  <span class="hljs-keyword">const</span> DS4 = <span class="hljs-keyword">new</span> DualShock4()
-  <span class="hljs-comment">// This will request the WebHID device and initialize the controller</span>
-  <span class="hljs-keyword">await</span> DS4.init()
-  <span class="hljs-comment">// Define a custom lightbar color</span>
-  <span class="hljs-keyword">await</span> DS4.lightbar.setColorRGB(<span class="hljs-number">170</span>, <span class="hljs-number">255</span>, <span class="hljs-number">0</span>)
-  <span class="hljs-comment">// The state object is updated periodically with the current controller state</span>
-  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">logInputs</span> (<span class="hljs-params"></span>) </span>{
-    requestAnimationFrame(logInputs)
-    <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'triangle'</span>).innerText = <span class="hljs-string">`Triangle Button: <span class="hljs-subst">${DS4.state.buttons.triangle}</span>`</span>
-    <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'circle'</span>).innerText = <span class="hljs-string">`Circle Button: <span class="hljs-subst">${DS4.state.buttons.circle}</span>`</span>
-    <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'cross'</span>).innerText = <span class="hljs-string">`Cross Button: <span class="hljs-subst">${DS4.state.buttons.cross}</span>`</span>
-    <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'square'</span>).innerText = <span class="hljs-string">`Square Button: <span class="hljs-subst">${DS4.state.buttons.square}</span>`</span>
-
-    <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'leftStick'</span>).innerText = <span class="hljs-string">`Left Stick: <span class="hljs-subst">${DS4.state.axes.leftStickX}</span>, <span class="hljs-subst">${DS4.state.axes.leftStickY}</span>`</span>
-    <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'rightStick'</span>).innerText = <span class="hljs-string">`Right Stick: <span class="hljs-subst">${DS4.state.axes.rightStickX}</span>, <span class="hljs-subst">${DS4.state.axes.rightStickY}</span>`</span>
-  }
-  logInputs()
-})</code></pre>
-				<a href="#documentation" id="documentation" style="color: inherit; text-decoration: none;">
-					<h3>Documentation</h3>
-				</a>
-				<p>Documentation is available <a href="https://thebitlink.github.io/WebHID-DS4/docs/">here</a></p>
-			</div>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="dualshock4touchpad.html#touches" class="tsd-kind-icon">touches</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="touches" class="tsd-anchor"></a>
+					<h3>touches</h3>
+					<div class="tsd-signature tsd-kind-icon">touches<span class="tsd-signature-symbol">:</span> <a href="dualshock4touchpadtouch.html" class="tsd-signature-type">DualShock4TouchpadTouch</a><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/TheBITLINK/WebHID-DS4/blob/7b9e1c8/src/state.ts#L120">state.ts:120</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Current touches</p>
+						</div>
+					</div>
+				</section>
+			</section>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 			<nav class="tsd-navigation primary">
 				<ul>
 					<li class="globals  ">
-						<a href="globals.html"><em>Globals</em></a>
+						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-enum">
-						<a href="enums/dualshock4interface.html" class="tsd-kind-icon">Dual<wbr>Shock4<wbr>Interface</a>
+						<a href="../enums/dualshock4interface.html" class="tsd-kind-icon">Dual<wbr>Shock4<wbr>Interface</a>
 					</li>
 					<li class=" tsd-kind-class">
-						<a href="classes/dualshock4.html" class="tsd-kind-icon">Dual<wbr>Shock4</a>
+						<a href="../classes/dualshock4.html" class="tsd-kind-icon">Dual<wbr>Shock4</a>
 					</li>
 					<li class=" tsd-kind-class">
-						<a href="classes/dualshock4lightbar.html" class="tsd-kind-icon">Dual<wbr>Shock4<wbr>Lightbar</a>
+						<a href="../classes/dualshock4lightbar.html" class="tsd-kind-icon">Dual<wbr>Shock4<wbr>Lightbar</a>
 					</li>
 					<li class=" tsd-kind-class">
-						<a href="classes/dualshock4rumble.html" class="tsd-kind-icon">Dual<wbr>Shock4<wbr>Rumble</a>
+						<a href="../classes/dualshock4rumble.html" class="tsd-kind-icon">Dual<wbr>Shock4<wbr>Rumble</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/dualshock4analogstate.html" class="tsd-kind-icon">Dual<wbr>Shock4<wbr>Analog<wbr>State</a>
+						<a href="dualshock4analogstate.html" class="tsd-kind-icon">Dual<wbr>Shock4<wbr>Analog<wbr>State</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/dualshock4buttonstate.html" class="tsd-kind-icon">Dual<wbr>Shock4<wbr>Button<wbr>State</a>
+						<a href="dualshock4buttonstate.html" class="tsd-kind-icon">Dual<wbr>Shock4<wbr>Button<wbr>State</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/dualshock4state.html" class="tsd-kind-icon">Dual<wbr>Shock4<wbr>State</a>
+						<a href="dualshock4state.html" class="tsd-kind-icon">Dual<wbr>Shock4<wbr>State</a>
 					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/dualshock4touchpad.html" class="tsd-kind-icon">Dual<wbr>Shock4<wbr>Touchpad</a>
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface">
+						<a href="dualshock4touchpad.html" class="tsd-kind-icon">Dual<wbr>Shock4<wbr>Touchpad</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="dualshock4touchpad.html#touches" class="tsd-kind-icon">touches</a>
+							</li>
+						</ul>
 					</li>
+				</ul>
+				<ul class="after-current">
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/dualshock4touchpadtouch.html" class="tsd-kind-icon">Dual<wbr>Shock4<wbr>Touchpad<wbr>Touch</a>
+						<a href="dualshock4touchpadtouch.html" class="tsd-kind-icon">Dual<wbr>Shock4<wbr>Touchpad<wbr>Touch</a>
 					</li>
 				</ul>
 			</nav>
@@ -229,7 +226,7 @@
 	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
 </div>
 <div class="overlay"></div>
-<script src="assets/js/main.js"></script>
-<script>if (location.protocol == 'file:') document.write('<script src="assets/js/search.js"><' + '/script>');</script>
+<script src="../assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
 </body>
 </html>

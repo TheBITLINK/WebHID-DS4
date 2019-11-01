@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>DualShock4Rumble | webhid-ds4</title>
+	<title>DualShock4Lightbar | webhid-ds4</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -54,10 +54,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="dualshock4rumble.html">DualShock4Rumble</a>
+					<a href="dualshock4lightbar.html">DualShock4Lightbar</a>
 				</li>
 			</ul>
-			<h1>Class DualShock4Rumble</h1>
+			<h1>Class DualShock4Lightbar</h1>
 		</div>
 	</div>
 </header>
@@ -67,7 +67,7 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Stores and manages the rumble state.</p>
+						<p>Stores and manages the lightbar state.</p>
 					</div>
 				</div>
 			</section>
@@ -75,7 +75,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">DualShock4Rumble</span>
+						<span class="target">DualShock4Lightbar</span>
 					</li>
 				</ul>
 			</section>
@@ -86,20 +86,22 @@
 						<section class="tsd-index-section tsd-is-private tsd-is-private-protected">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="dualshock4rumble.html#controller" class="tsd-kind-icon">controller</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="dualshock4lightbar.html#controller" class="tsd-kind-icon">controller</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Accessors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-accessor tsd-parent-kind-class"><a href="dualshock4rumble.html#heavy" class="tsd-kind-icon">heavy</a></li>
-								<li class="tsd-kind-accessor tsd-parent-kind-class"><a href="dualshock4rumble.html#light" class="tsd-kind-icon">light</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class"><a href="dualshock4lightbar.html#b" class="tsd-kind-icon">b</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class"><a href="dualshock4lightbar.html#g" class="tsd-kind-icon">g</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class"><a href="dualshock4lightbar.html#r" class="tsd-kind-icon">r</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="dualshock4rumble.html#setrumbleintensity" class="tsd-kind-icon">set<wbr>Rumble<wbr>Intensity</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="dualshock4lightbar.html#setcolorhsl" class="tsd-kind-icon">set<wbr>ColorHSL</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="dualshock4lightbar.html#setcolorrgb" class="tsd-kind-icon">set<wbr>ColorRGB</a></li>
 							</ul>
 						</section>
 					</div>
@@ -113,7 +115,7 @@
 					<div class="tsd-signature tsd-kind-icon">controller<span class="tsd-signature-symbol">:</span> <a href="dualshock4.html" class="tsd-signature-type">DualShock4</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in rumble.ts:8</li>
+							<li>Defined in <a href="https://github.com/TheBITLINK/WebHID-DS4/blob/7b9e1c8/src/lightbar.ts#L9">lightbar.ts:9</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -121,22 +123,22 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Accessors</h2>
 				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class">
-					<a name="heavy" class="tsd-anchor"></a>
-					<h3>heavy</h3>
+					<a name="b" class="tsd-anchor"></a>
+					<h3>b</h3>
 					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> heavy<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> heavy<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> b<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> b<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in rumble.ts:38</li>
+									<li>Defined in <a href="https://github.com/TheBITLINK/WebHID-DS4/blob/7b9e1c8/src/lightbar.ts#L51">lightbar.ts:51</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Heavy Rumble Intensity (0-255)</p>
+									<p>Blue Color Intensity (0-255)</p>
 								</div>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
@@ -144,12 +146,12 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in rumble.ts:42</li>
+									<li>Defined in <a href="https://github.com/TheBITLINK/WebHID-DS4/blob/7b9e1c8/src/lightbar.ts#L55">lightbar.ts:55</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Heavy Rumble Intensity (0-255)</p>
+									<p>Blue Color Intensity (0-255)</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -163,22 +165,22 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class">
-					<a name="light" class="tsd-anchor"></a>
-					<h3>light</h3>
+					<a name="g" class="tsd-anchor"></a>
+					<h3>g</h3>
 					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> light<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> light<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> g<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> g<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in rumble.ts:28</li>
+									<li>Defined in <a href="https://github.com/TheBITLINK/WebHID-DS4/blob/7b9e1c8/src/lightbar.ts#L41">lightbar.ts:41</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Light Rumble Intensity (0-255)</p>
+									<p>Green Color Intensity (0-255)</p>
 								</div>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
@@ -186,12 +188,54 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in rumble.ts:32</li>
+									<li>Defined in <a href="https://github.com/TheBITLINK/WebHID-DS4/blob/7b9e1c8/src/lightbar.ts#L45">lightbar.ts:45</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Light Rumble Intensity (0-255)</p>
+									<p>Green Color Intensity (0-255)</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class">
+					<a name="r" class="tsd-anchor"></a>
+					<h3>r</h3>
+					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> r<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> r<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/TheBITLINK/WebHID-DS4/blob/7b9e1c8/src/lightbar.ts#L31">lightbar.ts:31</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Red Color Intensity (0-255)</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/TheBITLINK/WebHID-DS4/blob/7b9e1c8/src/lightbar.ts#L35">lightbar.ts:35</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Red Color Intensity (0-255)</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -208,35 +252,84 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="setrumbleintensity" class="tsd-anchor"></a>
-					<h3>set<wbr>Rumble<wbr>Intensity</h3>
+					<a name="setcolorhsl" class="tsd-anchor"></a>
+					<h3>set<wbr>ColorHSL</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">set<wbr>Rumble<wbr>Intensity<span class="tsd-signature-symbol">(</span>light<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, heavy<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">set<wbr>ColorHSL<span class="tsd-signature-symbol">(</span>h<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, s<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, l<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in rumble.ts:52</li>
+									<li>Defined in <a href="https://github.com/TheBITLINK/WebHID-DS4/blob/7b9e1c8/src/lightbar.ts#L79">lightbar.ts:79</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Set the rumble intensity</p>
+									<p>Sets the lightbar color (HSL)</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>light: <span class="tsd-signature-type">number</span></h5>
+									<h5>h: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>Light rumble intensity (0-255)</p>
+										<p>Hue</p>
 									</div>
 								</li>
 								<li>
-									<h5>heavy: <span class="tsd-signature-type">number</span></h5>
+									<h5>s: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>Heavy rumble intensity (0-255)</p>
+										<p>Saturation</p>
+									</div>
+								</li>
+								<li>
+									<h5>l: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Lightness</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="setcolorrgb" class="tsd-anchor"></a>
+					<h3>set<wbr>ColorRGB</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>ColorRGB<span class="tsd-signature-symbol">(</span>r<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, g<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/TheBITLINK/WebHID-DS4/blob/7b9e1c8/src/lightbar.ts#L66">lightbar.ts:66</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Sets the lightbar color (RGB)</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>r: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Red color intensity (0-255)</p>
+									</div>
+								</li>
+								<li>
+									<h5>g: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Green color intensity (0-255)</p>
+									</div>
+								</li>
+								<li>
+									<h5>b: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Blue color intensity (0-255)</p>
 									</div>
 								</li>
 							</ul>
@@ -262,30 +355,36 @@
 					<li class=" tsd-kind-class">
 						<a href="dualshock4.html" class="tsd-kind-icon">Dual<wbr>Shock4</a>
 					</li>
-					<li class=" tsd-kind-class">
-						<a href="dualshock4lightbar.html" class="tsd-kind-icon">Dual<wbr>Shock4<wbr>Lightbar</a>
-					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-class">
-						<a href="dualshock4rumble.html" class="tsd-kind-icon">Dual<wbr>Shock4<wbr>Rumble</a>
+						<a href="dualshock4lightbar.html" class="tsd-kind-icon">Dual<wbr>Shock4<wbr>Lightbar</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-								<a href="dualshock4rumble.html#controller" class="tsd-kind-icon">controller</a>
+								<a href="dualshock4lightbar.html#controller" class="tsd-kind-icon">controller</a>
 							</li>
 							<li class=" tsd-kind-accessor tsd-parent-kind-class">
-								<a href="dualshock4rumble.html#heavy" class="tsd-kind-icon">heavy</a>
+								<a href="dualshock4lightbar.html#b" class="tsd-kind-icon">b</a>
 							</li>
 							<li class=" tsd-kind-accessor tsd-parent-kind-class">
-								<a href="dualshock4rumble.html#light" class="tsd-kind-icon">light</a>
+								<a href="dualshock4lightbar.html#g" class="tsd-kind-icon">g</a>
+							</li>
+							<li class=" tsd-kind-accessor tsd-parent-kind-class">
+								<a href="dualshock4lightbar.html#r" class="tsd-kind-icon">r</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="dualshock4rumble.html#setrumbleintensity" class="tsd-kind-icon">set<wbr>Rumble<wbr>Intensity</a>
+								<a href="dualshock4lightbar.html#setcolorhsl" class="tsd-kind-icon">set<wbr>ColorHSL</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="dualshock4lightbar.html#setcolorrgb" class="tsd-kind-icon">set<wbr>ColorRGB</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
+					<li class=" tsd-kind-class">
+						<a href="dualshock4rumble.html" class="tsd-kind-icon">Dual<wbr>Shock4<wbr>Rumble</a>
+					</li>
 					<li class=" tsd-kind-interface">
 						<a href="../interfaces/dualshock4analogstate.html" class="tsd-kind-icon">Dual<wbr>Shock4<wbr>Analog<wbr>State</a>
 					</li>
