@@ -4,6 +4,7 @@
   "description": "An API wrapper built over the experimental WebHID API to communicate with DualShock 4 controllers",
   "main": "dist/webhid-ds4.js",
   "module": "dist/webhid-ds4.esm.js",
+  "types": "dist/index.d.ts",
   "repository": "https://github.com/TheBITLINK/WebHID-DS4",
   "author": "TheBITLINK aka BIT <me@thebitlink.com>",
   "license": "MIT",
@@ -18,18 +19,18 @@
     "@vue/component-compiler-utils": "^3.0.0",
     "parcel-bundler": "^1.12.3",
     "rollup": "^1.26.2",
+    "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-typescript": "^1.0.1",
     "tslib": "^1.10.0",
     "typedoc": "^0.15.0",
     "typescript": "^3.6.3",
     "vue": "^2.6.10",
     "vue-hot-reload-api": "^2.3.4",
-    "vue-template-compiler": "^2.6.10"
+    "vue-template-compiler": "^2.6.10",
+    "rollup-plugin-typescript2": "^0.24.3"
   },
   "dependencies": {
-    "crc": "^3.8.0",
-    "rollup-plugin-commonjs": "^10.1.0"
+    "crc": "^3.8.0"
   },
   "browserslist": [
     "last 1 Chrome version"
