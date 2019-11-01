@@ -4,27 +4,66 @@ import DualShock4Rumble from './rumble'
 import { normalizeThumbstick, normalizeTrigger } from './util/normalize'
 import { crc32 } from 'crc'
 
+/**
+ * Main class.
+ */
 export class DualShock4 {
+  /** Internal WebHID device */
   device ?: webhid.HIDDevice
 
+  /** Raw contents of the last HID Report sent by the controller. */
   lastReport ?: ArrayBuffer
+  /** Raw contents of the last HID Report sent to the controller. */
   lastSentReport ?: ArrayBuffer
 
+  /** Current controller state */
   state = defaultState
 
+  /** Allows lightbar control */
   lightbar = new DualShock4Lightbar(this)
+  /** Allows rumble control */
   rumble = new DualShock4Rumble(this)
 
+  constructor () {
+    if (!navigator.hid || !navigator.hid.requestDevice) {
+      throw new Error('WebHID not supported by browser or not available.')
+    }
+  }
+
   /**
-   * Initializes the WebHID API 
+   * Initializes the WebHID API and requests access to the device.
+   * 
+   * This function must be called in the context of user interaction
+   * (i.e in a click event handler), otherwise it might not work.
    */
   async init () {
     if (this.device && this.device.opened) return
 
     this.device = await navigator.hid.requestDevice({
+      // TODO: Add more compatible controllers?
       filters: [
-        // TODO: Add more IDs
-        { vendorId: 0x054C, productId: 0x09CC }
+        // Official Sony Controllers
+        { vendorId: 0x054C, productId: 0x0BA0 },
+        { vendorId: 0x054C, productId: 0x05C4 },
+        { vendorId: 0x054C, productId: 0x09CC },
+        { vendorId: 0x054C, productId: 0x05C5 },
+        // Razer Raiju
+        { vendorId: 0x1532, productId: 0x1000 },
+        { vendorId: 0x1532, productId: 0x1007 },
+        { vendorId: 0x1532, productId: 0x1004 },
+        { vendorId: 0x1532, productId: 0x1009 },
+        // Nacon Revol
+        { vendorId: 0x146B, productId: 0x0D01 },
+        { vendorId: 0x146B, productId: 0x0D02 },
+        { vendorId: 0x146B, productId: 0x0D08 },
+        // Other third party controllers
+        { vendorId: 0x0F0D, productId: 0x00EE },
+        { vendorId: 0x7545, productId: 0x0104 },
+        { vendorId: 0x2E95, productId: 0x7725 },
+        { vendorId: 0x11C0, productId: 0x4001 },
+        { vendorId: 0x0C12, productId: 0x57AB },
+        { vendorId: 0x0C12, productId: 0x0E16 },
+        { vendorId: 0x0F0D, productId: 0x0084 }
       ]
     })
 
@@ -33,7 +72,14 @@ export class DualShock4 {
     this.device.oninputreport = (e : webhid.HIDInputReportEvent) => this.processControllerReport(e)
   }
 
-  processControllerReport (report : webhid.HIDInputReportEvent) {
+  /**
+   * Parses a report sent from the controller and updates the state.
+   * 
+   * This function is called internally by the library each time a report is received.
+   * 
+   * @param report - HID Report sent by the controller.
+   */
+  private processControllerReport (report : webhid.HIDInputReportEvent) {
     const { data } = report
     this.lastReport = data.buffer
 
@@ -63,7 +109,14 @@ export class DualShock4 {
     }
   }
 
-  updateState (data : DataView) {
+  /**
+   * Updates the controller state using normalized data from the last report.
+   * 
+   * This function is called internally by the library each time a report is received.
+   * 
+   * @param data - Normalized data from the HID report.
+   */
+  private updateState (data : DataView) {
     // Update thumbsticks
     this.state.axes.leftStickX = normalizeThumbstick(data.getUint8(0))
     this.state.axes.leftStickY = normalizeThumbstick(data.getUint8(1))
@@ -134,7 +187,13 @@ export class DualShock4 {
     }
   }
 
-  /** Sends the local rumble and lightbar state to the controller */
+  /**
+   * Sends the local rumble and lightbar state to the controller.
+   * 
+   * This function is called automatically in most cases.
+   * 
+   * **Currently broken over Bluetooth, doesn't do anything**
+   */
   async sendLocalState () {
     if (!this.device) throw new Error('Controller not initialized. You must call .init() first!')
 

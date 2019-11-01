@@ -6,7 +6,7 @@ export default {
   input: './src/index.ts',
   output: [
     { file: 'dist/webhid-ds4.js', format: 'cjs' },
-    { dir: 'dist/webhid-ds4.esm.js', format: 'esm' }
+    { file: 'dist/webhid-ds4.esm.js', format: 'esm' }
   ],
   plugins: [
     typescript(),
