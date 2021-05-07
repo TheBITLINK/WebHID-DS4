@@ -1,4 +1,4 @@
-import { DualShock4 } from '.'
+import { DualShock4 } from './index'
 import { hslToRgb } from './util/colorConversion'
 
 /**

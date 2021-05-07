@@ -1,6 +1,6 @@
 # WebHID-DS4
 
-A browser API for Sony DualShock 4 controllers built over the experimental WebHID API.
+A browser API for Sony DualShock 4 controllers built over the WebHID API.
 
 Provides high level APIs to access most of the controller's features over USB and Bluetooth.
 
@@ -15,7 +15,6 @@ Provides high level APIs to access most of the controller's features over USB an
  
 ### Known Issues
 
- - The WebHID API is currently only available behind a flag in Chrome 78+ (chrome://flags/#enable-experimental-web-platform-features)
  - Setting the lightbar colors and rumble intensity over Bluetooth is currently broken.
  - There's currently no way to detect if a controller has been disconnected.
  - There's currently no way to detect if a controller has already been connected either.

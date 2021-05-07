@@ -1,4 +1,4 @@
-import { DualShock4 } from '.'
+import { DualShock4 } from './index'
 
 /**
  * Stores and manages the rumble state.

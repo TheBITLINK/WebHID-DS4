@@ -2,6 +2,7 @@ import { defaultState, DualShock4Interface } from './state'
 import DualShock4Lightbar from './lightbar'
 import DualShock4Rumble from './rumble'
 import { normalizeThumbstick, normalizeTrigger } from './util/normalize'
+import { Buffer } from 'buffer'
 import { crc32 } from 'crc'
 
 /**
@@ -9,7 +10,7 @@ import { crc32 } from 'crc'
  */
 export class DualShock4 {
   /** Internal WebHID device */
-  device ?: webhid.HIDDevice
+  device ?: HIDDevice
 
   /** Raw contents of the last HID Report sent by the controller. */
   lastReport ?: ArrayBuffer
@@ -39,7 +40,7 @@ export class DualShock4 {
   async init () {
     if (this.device && this.device.opened) return
 
-    this.device = await navigator.hid.requestDevice({
+    const devices = await navigator.hid.requestDevice({
       // TODO: Add more compatible controllers?
       filters: [
         // Official Sony Controllers
@@ -67,9 +68,11 @@ export class DualShock4 {
       ]
     })
 
+    this.device = devices[0]
+
     await this.device.open()
 
-    this.device.oninputreport = (e : webhid.HIDInputReportEvent) => this.processControllerReport(e)
+    this.device.oninputreport = (e : HIDInputReportEvent) => this.processControllerReport(e)
   }
 
   /**
@@ -79,7 +82,7 @@ export class DualShock4 {
    * 
    * @param report - HID Report sent by the controller.
    */
-  private processControllerReport (report : webhid.HIDInputReportEvent) {
+  private processControllerReport (report : HIDInputReportEvent) {
     const { data } = report
     this.lastReport = data.buffer
 
@@ -222,8 +225,10 @@ export class DualShock4 {
 
       return this.device.sendReport(report[0], report.slice(1))
     } else {
-      const report = new Uint16Array(75)
-      
+      const report = new Uint16Array(79)
+      const crcBytes = new Uint8Array(4)
+      const crcDv = new DataView(crcBytes.buffer)
+
       // Header
       report[0] = 0xA2
       // Report ID
@@ -231,10 +236,8 @@ export class DualShock4 {
 
       // Poll Rate
       report[2] = 0x80
-
-      // Enable Rumble (0x01), Lightbar (0x02)
-      report[3] = 0xF0 | 0x01 | 0x02
-      
+      // Enable rumble and lights
+      report[4] = 0xFF
 
       // Light rumble motor
       report[7] = this.rumble.light
@@ -248,13 +251,12 @@ export class DualShock4 {
       // Lightbar Blue
       report[11] = this.lightbar.b
 
-      // @ts-ignore
-      const crc = crc32(report.buffer).toString(16)
-      report[74] = (crc & 0x000000ff) >> 0
-      report[75] = (crc & 0x0000ff00) >> 8
-      report[76] = (crc & 0x00ff0000) >> 16
-      report[77] = (crc & 0xff000000) >> 24
-
+      crcDv.setUint32(0, crc32(Buffer.from(report.slice(0, 75))))
+      report[75] = crcBytes[3]
+      report[76] = crcBytes[2]
+      report[77] = crcBytes[1]
+      report[78] = crcBytes[0]
+      
       this.lastSentReport = report.buffer
 
       return this.device.sendReport(report[1], report.slice(2))

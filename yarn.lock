@@ -803,6 +803,11 @@
   dependencies:
     "@types/node" "*"
 
+"@types/w3c-web-hid@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@types/w3c-web-hid/-/w3c-web-hid-1.0.0.tgz#eca49db58fd114f6839579fba6e4a422e8a2e4c5"
+  integrity sha512-sbcYWo0eP/XvVqtDFh9h1zFoPtr7nLGQjGJFtHlKcKdrz+dXFPTKK7JpCpORBQkqNodvOQx8OW8FbdOiEuwHOQ==
+
 "@vue/component-compiler-utils@^3.0.0":
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@vue/component-compiler-utils/-/component-compiler-utils-3.0.0.tgz#d16fa26b836c06df5baaeb45f3d80afc47e35634"
