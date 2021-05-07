@@ -1,6 +1,6 @@
 {
   "name": "webhid-ds4",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "An API wrapper built over the experimental WebHID API to communicate with DualShock 4 controllers",
   "main": "dist/webhid-ds4.js",
   "module": "dist/webhid-ds4.esm.js",
